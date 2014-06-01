@@ -38,6 +38,13 @@ public class SavePointCommand extends CommandBase
 		}
 		
 		String pointName = args[0];
+		
+		if(pointName.equalsIgnoreCase("spawn"))
+		{
+			player.sendMessage(ChatColor.YELLOW + pointName + ChatColor.RED + " is the point that points your compass towards spawn, and thus it is reserved.");
+			return true;
+		}
+		
 		Location loc = player.getLocation();
 		getPointManager().savePoint(player.getUniqueId(), loc, pointName);
 		player.sendMessage(ChatColor.GREEN + "Point " + ChatColor.YELLOW + pointName + ChatColor.GREEN + " saved.");
