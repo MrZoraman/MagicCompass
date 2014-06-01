@@ -6,9 +6,14 @@ import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.Bukkit
 
 public class MagicCompass extends JavaPlugin
 {
+	private PointManager pointManager;
+	
 	@Override
 	public void onEnable()
 	{
+		pointManager = new PointManager(this);
+		pointManager.convertToUuids();
+		
 		BukkitCommandSystem cs = new BukkitCommandSystem(this);
 		
 		//point
@@ -17,5 +22,7 @@ public class MagicCompass extends JavaPlugin
 		//point reload
 		//point help
 		//point list
+		
+		
 	}
 }
