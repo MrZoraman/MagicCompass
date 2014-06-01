@@ -40,7 +40,7 @@ public class ListPointsCommand extends CommandBase
 			builder.append(ChatColor.YELLOW).append(point).append(ChatColor.DARK_GRAY).append(", ");
 		}
 		
-		builder.setLength(builder.length() - 3);
+		builder.setLength(builder.length() - 2);
 		player.sendMessage(ChatColor.GREEN + "Point List:");
 		player.sendMessage(builder.toString());
 		
