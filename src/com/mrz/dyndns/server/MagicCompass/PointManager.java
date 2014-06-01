@@ -129,9 +129,6 @@ public class PointManager
 					config.set(uuidString + "." + point.name + ".Y", point.y);
 					config.set(uuidString + "." + point.name + ".Z", point.z);
 					
-					config.set(name + "." + point.name + ".X", null);
-					config.set(name + "." + point.name + ".Y", null);
-					config.set(name + "." + point.name + ".Z", null);
 					config.set(name + "." + point.name, null);
 				}
 				
