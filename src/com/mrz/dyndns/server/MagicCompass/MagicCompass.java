@@ -2,6 +2,7 @@ package com.mrz.dyndns.server.MagicCompass;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.mrz.dyndns.server.MagicCompass.commands.ListPointsCommand;
 import com.mrz.dyndns.server.MagicCompass.commands.RemovePointCommand;
 import com.mrz.dyndns.server.MagicCompass.commands.SavePointCommand;
 import com.mrz.dyndns.server.MagicCompass.commands.SetPointCommand;
@@ -24,14 +25,6 @@ public class MagicCompass extends JavaPlugin
 		cs.registerCommand("point {put|add|save}", new SavePointCommand(pointManager));
 		cs.registerCommand("point {del|rm|remove|delete|clear}", new RemovePointCommand(pointManager));
 		cs.registerCommand("point set", new SetPointCommand(pointManager));
-		
-		//point
-		//point set
-		//point clear
-		//point reload
-		//point help
-		//point list
-		
-		
+		cs.registerCommand("point list", new ListPointsCommand(pointManager));
 	}
 }

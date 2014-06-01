@@ -1,0 +1,49 @@
+package com.mrz.dyndns.server.MagicCompass.commands;
+
+import java.util.Set;
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import com.mrz.dyndns.server.MagicCompass.Permissions;
+import com.mrz.dyndns.server.MagicCompass.management.PointManager;
+
+public class ListPointsCommand extends CommandBase
+{
+	public ListPointsCommand(PointManager pointManager)
+	{
+		super(pointManager);
+	}
+
+	@Override
+	public boolean execute(CommandSender sender, Player player, String cmdName, String[] preArgs, String[] args)
+	{
+		if(player == null)
+		{
+			sender.sendMessage(ChatColor.RED + "You don't have any points to list!");
+			return true;
+		}
+		
+		if(Permissions.CAN_USE.verify(player) == false)
+		{
+			player.sendMessage(ChatColor.RED + "You're not allowed to view your points!");
+			return true;
+		}
+		
+		Set<String> pointNames = getPointManager().getPointList(player.getUniqueId());
+		
+		StringBuilder builder = new StringBuilder();
+		
+		for(String point : pointNames)
+		{
+			builder.append(ChatColor.YELLOW).append(point).append(ChatColor.DARK_GRAY).append(", ");
+		}
+		
+		builder.setLength(builder.length() - 3);
+		player.sendMessage(ChatColor.GREEN + "Point List:");
+		player.sendMessage(builder.toString());
+		
+		return true;
+	}
+}

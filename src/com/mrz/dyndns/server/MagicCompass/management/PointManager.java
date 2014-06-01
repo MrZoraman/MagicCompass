@@ -113,6 +113,16 @@ public class PointManager
 	}
 	
 	/**
+	 * Gets a set of the points a player owns
+	 * @param uuid The uuid of the player who owns the points that are to be returned
+	 * @return A set of point names
+	 */
+	public Set<String> getPointList(UUID uuid)
+	{
+		return this.config.getConfig().getConfigurationSection(uuid.toString()).getKeys(false);
+	}
+	
+	/**
 	 * Converts the config file to a uuid based system
 	 */
 	public void convertToUuids()
