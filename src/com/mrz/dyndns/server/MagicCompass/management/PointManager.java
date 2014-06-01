@@ -8,10 +8,15 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+
 import com.mrz.dyndns.server.MagicCompass.evilmidget38.UUIDFetcher;
 import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
+
+import static com.mrz.dyndns.server.MagicCompass.management.PointReadResultType.*;
 
 public class PointManager
 {
@@ -62,10 +67,38 @@ public class PointManager
 		this.config.saveConfig();
 	}
 	
-	public Location readPoint(UUID uuid, String pointName)
+	/**
+	 * Reads a point from the file
+	 * @param uuid The uuid of the owner of the point
+	 * @param pointName The name of the point
+	 * @return A PointReadResult, which contains the type of failure 
+	 *             (if any) that occured when trying to load the pont, 
+	 *             and the location itself (if there was no failure)
+	 */
+	public PointReadResult readPoint(UUID uuid, String pointName)
 	{
 		String uuidString = uuid.toString();
-		return null;
+		FileConfiguration config = this.config.getConfig();
+		
+		if(!pointExists(uuid, pointName))
+		{
+			return new PointReadResult(NO_POINT, null);
+		}
+		
+		String worldName = config.getString(uuidString + "." + pointName + ".World");
+		World world = Bukkit.getWorld(worldName);
+		
+		if(world == null)
+		{
+			return new PointReadResult(NO_WORLD, null);
+		}
+		
+		double x = config.getDouble(uuidString + "." + pointName + ".X");
+		double y = config.getDouble(uuidString + "." + pointName + ".Y");
+		double z = config.getDouble(uuidString + "." + pointName + ".Z");
+		
+		Location loc = new Location(world, x, y, z);
+		return new PointReadResult(SUCCESS, loc);
 	}
 	
 	/**
