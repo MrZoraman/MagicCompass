@@ -19,7 +19,7 @@ public class MagicCompass extends JavaPlugin
 		
 		BukkitCommandSystem cs = new BukkitCommandSystem(this);
 		
-		cs.registerCommand("point save", new SavePointCommand(pointManager));
+		cs.registerCommand("point {put|add|save}", new SavePointCommand(pointManager));
 		cs.registerCommand("point {del|rm|remove|delete|clear}", new RemovePointCommand(pointManager));
 		
 		//point
