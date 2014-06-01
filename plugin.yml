@@ -1,5 +1,5 @@
 name: MagicCompass
-version: 0.0.9
+version: 0.1.0
 description: Gives players the ability to control where their compass points.
 author: MrZoraman
 main: com.mrz.dyndns.server.MagicCompass.MagicCompass

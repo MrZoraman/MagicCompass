@@ -32,17 +32,23 @@ public class ListPointsCommand extends CommandBase
 		}
 		
 		Set<String> pointNames = getPointManager().getPointList(player.getUniqueId());
-		
-		StringBuilder builder = new StringBuilder();
-		
-		for(String point : pointNames)
+		if(pointNames == null)
 		{
-			builder.append(ChatColor.YELLOW).append(point).append(ChatColor.DARK_GRAY).append(", ");
+			player.sendMessage(ChatColor.RED + "You don't have any points!");
 		}
-		
-		builder.setLength(builder.length() - 2);
-		player.sendMessage(ChatColor.GREEN + "Point List:");
-		player.sendMessage(builder.toString());
+		else
+		{
+			StringBuilder builder = new StringBuilder();
+			
+			for(String point : pointNames)
+			{
+				builder.append(ChatColor.YELLOW).append(point).append(ChatColor.DARK_GRAY).append(", ");
+			}
+			
+			builder.setLength(builder.length() - 2);
+			player.sendMessage(ChatColor.GREEN + "Point List:");
+			player.sendMessage(builder.toString());
+		}
 		
 		return true;
 	}
