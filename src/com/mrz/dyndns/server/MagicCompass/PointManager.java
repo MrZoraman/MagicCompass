@@ -1,10 +1,17 @@
 package com.mrz.dyndns.server.MagicCompass;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import com.mrz.dyndns.server.MagicCompass.evilmidget38.UUIDFetcher;
 
 public class PointManager
 {
@@ -59,6 +66,93 @@ public class PointManager
 	 */
 	public void convertToUuids()
 	{
+		FileConfiguration config = plugin.getConfig();
 		
+		class Point
+		{
+			String name;
+			double x, y, z;
+		}
+		
+		Map<String, Set<Point>> tempPoints = new HashMap<String, Set<Point>>();
+		
+		Set<String> keys = config.getConfigurationSection("").getKeys(false);
+		for(String key : keys)
+		{
+			if(!isUuid(key))
+			{
+				//it be time to convert!
+				
+				Set<Point> points = new HashSet<Point>();
+				Set<String> pointNames = config.getConfigurationSection(key).getKeys(false);
+				for(String pointName : pointNames)
+				{
+					Point point = new Point();
+					point.name = pointName;
+					point.x = config.getDouble(key + "." + pointName + ".X");
+					point.y = config.getDouble(key + "." + pointName + ".Y");
+					point.z = config.getDouble(key + "." + pointName + ".Z");
+					
+					points.add(point);
+				}
+				
+				tempPoints.put(key, points);
+			}
+		}
+		
+		if(!tempPoints.isEmpty())
+		{
+			plugin.getLogger().info("Converting to uuid system...");
+			UUIDFetcher fetcher = new UUIDFetcher(new ArrayList<String>(tempPoints.keySet()));
+			Map<String, UUID> result = null;
+			try
+			{
+				result = fetcher.call();
+			}
+			catch (Exception e)
+			{
+				plugin.getLogger().severe("Failed to convert to uuid system!");
+				e.printStackTrace();
+				return;
+			}
+			
+			for(Map.Entry<String, UUID> items : result.entrySet())
+			{
+				String uuidString = items.getValue().toString();
+				String name = items.getKey();
+				
+				Set<Point> points = tempPoints.get(name);
+				
+				for(Point point : points)
+				{
+					config.set(uuidString + "." + point.name + ".X", point.x);
+					config.set(uuidString + "." + point.name + ".Y", point.y);
+					config.set(uuidString + "." + point.name + ".Z", point.z);
+					
+					config.set(name + "." + point.name + ".X", null);
+					config.set(name + "." + point.name + ".Y", null);
+					config.set(name + "." + point.name + ".Z", null);
+					config.set(name + "." + point.name, null);
+				}
+				
+				config.set(name, null);
+				
+				plugin.saveConfig();
+			}
+		}
+	}
+	
+	private static boolean isUuid(String uuidString)
+	{
+		try
+		{
+			UUID uuid = UUID.fromString(uuidString);
+			
+			return uuid.toString().equals(uuidString);
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
 	}
 }
