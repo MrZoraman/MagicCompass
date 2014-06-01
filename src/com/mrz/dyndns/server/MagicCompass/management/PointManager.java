@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass;
+package com.mrz.dyndns.server.MagicCompass.management;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,6 +60,12 @@ public class PointManager
 		config.set(uuidString + "." + pointName, null);
 		
 		this.config.saveConfig();
+	}
+	
+	public Location readPoint(UUID uuid, String pointName)
+	{
+		String uuidString = uuid.toString();
+		return null;
 	}
 	
 	/**

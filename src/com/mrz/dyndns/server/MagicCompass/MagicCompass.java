@@ -4,6 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mrz.dyndns.server.MagicCompass.commands.RemovePointCommand;
 import com.mrz.dyndns.server.MagicCompass.commands.SavePointCommand;
+import com.mrz.dyndns.server.MagicCompass.management.PointManager;
 import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
 import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.BukkitCommandSystem;
 

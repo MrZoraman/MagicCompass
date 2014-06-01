@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.mrz.dyndns.server.MagicCompass.Permissions;
-import com.mrz.dyndns.server.MagicCompass.PointManager;
+import com.mrz.dyndns.server.MagicCompass.management.PointManager;
 
 public class SavePointCommand extends CommandBase
 {
