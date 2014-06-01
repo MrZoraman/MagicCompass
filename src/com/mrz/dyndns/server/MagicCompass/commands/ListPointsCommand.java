@@ -46,7 +46,7 @@ public class ListPointsCommand extends CommandBase
 			}
 			
 			builder.setLength(builder.length() - 2);
-			player.sendMessage(ChatColor.GREEN + "Point List:");
+			player.sendMessage(ChatColor.GREEN + "Your Points:");
 			player.sendMessage(builder.toString());
 		}
 		
