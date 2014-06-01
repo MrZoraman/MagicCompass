@@ -1,7 +1,9 @@
 name: MagicCompass
-version: 0.0.4
+version: 0.0.5
 description: Gives players the ability to control where their compass points.
 author: MrZoraman
 main: com.mrz.dyndns.server.MagicCompass.MagicCompass
 website: http://dev.bukkit.org/bukkit-plugins/magiccompass/
 prefix: MagicCompass
+commands:
+  point:
