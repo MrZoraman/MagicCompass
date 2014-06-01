@@ -40,6 +40,7 @@ public class PointManager
 		config.set(uuidString + "." + pointName + ".X", x);
 		config.set(uuidString + "." + pointName + ".Y", y);
 		config.set(uuidString + "." + pointName + ".Z", z);
+		config.set(uuidString + "." + pointName + ".World", loc.getWorld().getName());
 		
 		plugin.saveConfig();
 	}
@@ -54,9 +55,7 @@ public class PointManager
 		String uuidString = uuid.toString();
 		FileConfiguration config = plugin.getConfig();
 		
-		config.set(uuidString + "." + pointName + ".X", null);
-		config.set(uuidString + "." + pointName + ".Y", null);
-		config.set(uuidString + "." + pointName + ".Z", null);
+		config.set(uuidString + "." + pointName, null);
 		
 		plugin.saveConfig();
 	}
@@ -70,7 +69,7 @@ public class PointManager
 		
 		class Point
 		{
-			String name;
+			String name, world;
 			double x, y, z;
 		}
 		
@@ -92,6 +91,7 @@ public class PointManager
 					point.x = config.getDouble(key + "." + pointName + ".X");
 					point.y = config.getDouble(key + "." + pointName + ".Y");
 					point.z = config.getDouble(key + "." + pointName + ".Z");
+					point.world = config.getString(key + "." + pointName + ".World");
 					
 					points.add(point);
 				}
@@ -128,6 +128,7 @@ public class PointManager
 					config.set(uuidString + "." + point.name + ".X", point.x);
 					config.set(uuidString + "." + point.name + ".Y", point.y);
 					config.set(uuidString + "." + point.name + ".Z", point.z);
+					config.set(uuidString + "." + point.name + ".World", point.world);
 					
 					config.set(name + "." + point.name, null);
 				}
