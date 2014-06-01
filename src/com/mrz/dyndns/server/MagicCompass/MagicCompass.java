@@ -2,6 +2,7 @@ package com.mrz.dyndns.server.MagicCompass;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.mrz.dyndns.server.MagicCompass.commands.RemovePointCommand;
 import com.mrz.dyndns.server.MagicCompass.commands.SavePointCommand;
 import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
 import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.BukkitCommandSystem;
@@ -19,6 +20,7 @@ public class MagicCompass extends JavaPlugin
 		BukkitCommandSystem cs = new BukkitCommandSystem(this);
 		
 		cs.registerCommand("point save", new SavePointCommand(pointManager));
+		cs.registerCommand("point {del|rm|remove|delete|clear}", new RemovePointCommand(pointManager));
 		
 		//point
 		//point set

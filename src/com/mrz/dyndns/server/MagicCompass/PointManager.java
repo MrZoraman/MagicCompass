@@ -63,6 +63,17 @@ public class PointManager
 	}
 	
 	/**
+	 * Checks if a point exists or not
+	 * @param uuid The uuid of the owner of the point
+	 * @param pointName The name of the point to check
+	 * @return True if the point exists, False if the point does not exist.
+	 */
+	public boolean pointExists(UUID uuid, String pointName)
+	{
+		return this.config.getConfig().contains(uuid.toString() + "." + pointName);
+	}
+	
+	/**
 	 * Converts the config file to a uuid based system
 	 */
 	public void convertToUuids()
