@@ -32,7 +32,7 @@ public class ListPointsCommand extends CommandBase
 		}
 		
 		Set<String> pointNames = getPointManager().getPointList(player.getUniqueId());
-		if(pointNames == null)
+		if(pointNames.size() <= 0)
 		{
 			player.sendMessage(ChatColor.RED + "You don't have any points!");
 		}
