@@ -1,11 +1,13 @@
 package com.mrz.dyndns.server.MagicCompass.commands;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.mrz.dyndns.server.MagicCompass.Permissions;
 import com.mrz.dyndns.server.MagicCompass.management.PointManager;
+import com.mrz.dyndns.server.MagicCompass.management.PointReadResult;
 
 public class SetPointCommand extends CommandBase
 {
@@ -38,18 +40,25 @@ public class SetPointCommand extends CommandBase
 		
 		String pointName = args[0];
 		
-		if(getPointManager().pointExists(player.getUniqueId(), pointName) == false)
+		PointReadResult result = getPointManager().readPoint(player.getUniqueId(), pointName);
+		
+		switch(result.getReadResultType())
 		{
+		case NO_POINT:
 			player.sendMessage(ChatColor.RED + "Point " + ChatColor.YELLOW + pointName + ChatColor.RED + " doesn't exist!");
 			player.sendMessage(ChatColor.RED + "You can add a point with " + ChatColor.AQUA + "/point add [pointName] " + ChatColor.RED + ".");
-			return true;
+			break;
 			//TODO: better permissions, permission based feedback message, better help system overall
-		}
-		else
-		{
-			
+		case NO_WORLD:
+			player.sendMessage(ChatColor.RED + "The world that that point is in no longer exists!");
+			break;
+		case SUCCESS:
+			Location loc = result.getLocation();
+			player.setCompassTarget(loc);
+			player.sendMessage(ChatColor.GREEN + "Your compass is now pointing towards point " + ChatColor.YELLOW + pointName + ChatColor.GREEN + ".");
+			break;
 		}
 		
-		return false;
+		return true;
 	}
 }
