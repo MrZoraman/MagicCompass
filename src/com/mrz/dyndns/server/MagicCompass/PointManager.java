@@ -6,20 +6,22 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
-
 import com.mrz.dyndns.server.MagicCompass.evilmidget38.UUIDFetcher;
+import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
 
 public class PointManager
 {
-	private final JavaPlugin plugin;
+	private final ConfigAccessor config;
+	private final Logger logger;
 	
-	public PointManager(JavaPlugin plugin)
+	public PointManager(ConfigAccessor config, Logger logger)
 	{
-		this.plugin = plugin;
+		this.config = config;
+		this.logger = logger;
 	}
 	
 	/**
@@ -31,7 +33,7 @@ public class PointManager
 	public void savePoint(UUID uuid, Location loc, String pointName)
 	{
 		String uuidString = uuid.toString();
-		FileConfiguration config = plugin.getConfig();
+		FileConfiguration config = this.config.getConfig();
 		
 		double x = loc.getX();
 		double y = loc.getY();
@@ -42,7 +44,7 @@ public class PointManager
 		config.set(uuidString + "." + pointName + ".Z", z);
 		config.set(uuidString + "." + pointName + ".World", loc.getWorld().getName());
 		
-		plugin.saveConfig();
+		this.config.saveConfig();
 	}
 	
 	/**
@@ -53,11 +55,11 @@ public class PointManager
 	public void deletePoint(UUID uuid, String pointName)
 	{
 		String uuidString = uuid.toString();
-		FileConfiguration config = plugin.getConfig();
+		FileConfiguration config = this.config.getConfig();
 		
 		config.set(uuidString + "." + pointName, null);
 		
-		plugin.saveConfig();
+		this.config.saveConfig();
 	}
 	
 	/**
@@ -65,7 +67,7 @@ public class PointManager
 	 */
 	public void convertToUuids()
 	{
-		FileConfiguration config = plugin.getConfig();
+		FileConfiguration config = this.config.getConfig();
 		
 		class Point
 		{
@@ -102,7 +104,7 @@ public class PointManager
 		
 		if(!tempPoints.isEmpty())
 		{
-			plugin.getLogger().info("Converting to uuid system...");
+			logger.info("Converting to uuid system...");
 			UUIDFetcher fetcher = new UUIDFetcher(new ArrayList<String>(tempPoints.keySet()));
 			Map<String, UUID> result = null;
 			try
@@ -111,7 +113,7 @@ public class PointManager
 			}
 			catch (Exception e)
 			{
-				plugin.getLogger().severe("Failed to convert to uuid system!");
+				logger.severe("Failed to convert to uuid system!");
 				e.printStackTrace();
 				return;
 			}
@@ -135,7 +137,7 @@ public class PointManager
 				
 				config.set(name, null);
 				
-				plugin.saveConfig();
+				this.config.saveConfig();
 			}
 		}
 	}
