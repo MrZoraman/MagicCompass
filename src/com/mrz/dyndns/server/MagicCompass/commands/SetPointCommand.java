@@ -53,7 +53,7 @@ public class SetPointCommand extends CommandBase
 		{
 		case NO_POINT:
 			player.sendMessage(ChatColor.RED + "Point " + ChatColor.YELLOW + pointName + ChatColor.RED + " doesn't exist!");
-			player.sendMessage(ChatColor.RED + "You can add a point with " + ChatColor.AQUA + "/point add [pointName] " + ChatColor.RED + ".");
+			player.sendMessage(ChatColor.RED + "You can add a point with " + ChatColor.AQUA + "/point add [PointName] " + ChatColor.RED + ".");
 			break;
 			//TODO: better permissions, permission based feedback message, better help system overall
 		case NO_WORLD:
