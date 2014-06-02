@@ -15,16 +15,16 @@ public class HelpCommand implements CSBukkitCommand
 	{
 		if(Permissions.CAN_USE.verify(sender))
 		{
-			sender.sendMessage(AQUA + "/point help " + YELLOW + "-" + DARK_PURPLE + " Shows this message.");
-			sender.sendMessage(AQUA + "/point list " + YELLOW + "-" + DARK_PURPLE + " Lists your saved points.");
-			sender.sendMessage(AQUA + "/point add [PointName] " + YELLOW + "-" + DARK_PURPLE + " Adds and saves a point to your point list.");
-			sender.sendMessage(AQUA + "/point remove [PointName] " + YELLOW + "-" + DARK_PURPLE + " Removes a point from your point list.");
-			sender.sendMessage(AQUA + "/point set [PointName] " + YELLOW + "-" + DARK_PURPLE + " Makes your compass point towards your point.");
+			sender.sendMessage(AQUA + "/point help " + YELLOW + "-" + LIGHT_PURPLE + " Shows this message.");
+			sender.sendMessage(AQUA + "/point list " + YELLOW + "-" + LIGHT_PURPLE + " Lists your saved points.");
+			sender.sendMessage(AQUA + "/point add [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Adds and saves a point to your list.");
+			sender.sendMessage(AQUA + "/point remove [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Removes a point from your list.");
+			sender.sendMessage(AQUA + "/point set [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Makes your compass point to a point.");
 		}
 		
 		if(Permissions.CAN_RELOAD.verify(sender))
 		{
-			sender.sendMessage(AQUA + "/point reload " + YELLOW + "-" + DARK_PURPLE + " Reloads the points.yml file.");
+			sender.sendMessage(AQUA + "/point reload " + YELLOW + "-" + LIGHT_PURPLE + " Reloads the points.yml file.");
 		}
 		
 		if(player == null)
