@@ -32,6 +32,6 @@ public class MagicCompass extends JavaPlugin
 		cs.registerCommand("point {del|rm|remove|delete|clear}", new RemovePointCommand(pointManager));
 		cs.registerCommand("point set", new SetPointCommand(pointManager));
 		cs.registerCommand("point list", new ListPointsCommand(pointManager));
-		cs.registerCommand("point reload", new ReloadCommand(pointConfig));
+		cs.registerCommand("point reload", new ReloadCommand(pointConfig, getLogger()));
 	}
 }
