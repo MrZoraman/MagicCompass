@@ -1,8 +1,8 @@
-name: MagicCompass
+name: ${project.name}
 version: 2.0.0
 description: Gives players the ability to control where their compass points.
 author: MrZoraman
-main: com.mrz.dyndns.server.MagicCompass.MagicCompass
+main: ${project.groupId}.MagicCompass.MagicCompass
 website: http://dev.bukkit.org/bukkit-plugins/magiccompass/
 prefix: MagicCompass
 commands:
