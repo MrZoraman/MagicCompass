@@ -17,6 +17,7 @@ import com.lagopusempire.MagicCompass.evilmidget38.UUIDFetcher;
 import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
 
 import static com.lagopusempire.MagicCompass.management.PointReadResultType.*;
+import org.bukkit.configuration.ConfigurationSection;
 
 public class PointManager {
 
@@ -118,7 +119,11 @@ public class PointManager {
      * @return A set of point names
      */
     public Set<String> getPointList(UUID uuid) {
-        return this.config.getConfig().getConfigurationSection(uuid.toString()).getKeys(false);
+        ConfigurationSection section = config.getConfig().getConfigurationSection(uuid.toString());
+        if(section == null) {
+            return new HashSet<>();
+        }
+        return section.getKeys(false);
     }
 
     /**
