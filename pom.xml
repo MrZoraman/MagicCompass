@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 	
-    <groupId>com.mrz.dyndns.server</groupId>
+    <groupId>com.lagopusempire</groupId>
     <artifactId>MagicCompass</artifactId>
     <version>2.0.0</version>
     <packaging>jar</packaging>
 	
     <name>${project.artifactId}</name>
     <description>Gives players the ability to control where their compass points.</description>
-    <inceptionYear>20??</inceptionYear>
+    <inceptionYear>2012</inceptionYear>
     <organization>
         <name>Lagopus Empire</name>
         <url>lagopusempire.com</url>
