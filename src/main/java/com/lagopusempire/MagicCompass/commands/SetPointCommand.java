@@ -35,12 +35,6 @@ public class SetPointCommand extends CommandBase {
 
         String pointName = args[0];
 
-        if (pointName.equalsIgnoreCase("spawn")) {
-            player.setCompassTarget(player.getWorld().getSpawnLocation());
-            player.sendMessage(ChatColor.GREEN + "Your compass is now pointing towards the spawn of your current world.");
-            return true;
-        }
-
         PointReadResult result = getPointManager().readPoint(player.getUniqueId(), pointName);
 
         switch (result.getReadResultType()) {
