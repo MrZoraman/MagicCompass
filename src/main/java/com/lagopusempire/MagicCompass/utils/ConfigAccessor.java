@@ -18,7 +18,7 @@
 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 * SOFTWARE.
-*/
+ */
 package com.lagopusempire.MagicCompass.utils;
 
 import java.io.File;
@@ -35,22 +35,24 @@ public class ConfigAccessor {
 
     private final String fileName;
     private final JavaPlugin plugin;
-    
+
     private File configFile;
     private FileConfiguration fileConfiguration;
 
     public ConfigAccessor(JavaPlugin plugin, String fileName) {
-        if (plugin == null)
+        if (plugin == null) {
             throw new IllegalArgumentException("plugin cannot be null");
+        }
         this.plugin = plugin;
         this.fileName = fileName;
         File dataFolder = plugin.getDataFolder();
-        if (dataFolder == null)
+        if (dataFolder == null) {
             throw new IllegalStateException();
+        }
         this.configFile = new File(plugin.getDataFolder(), fileName);
     }
 
-    public void reloadConfig() {        
+    public void reloadConfig() {
         fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
 
         // Look for defaults in the jar
@@ -79,9 +81,9 @@ public class ConfigAccessor {
             }
         }
     }
-    
+
     public void saveDefaultConfig() {
-        if (!configFile.exists()) {            
+        if (!configFile.exists()) {
             this.plugin.saveResource(fileName, false);
         }
     }
