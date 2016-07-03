@@ -18,7 +18,7 @@ public class ListPointsCommand extends CommandBase {
     @Override
     public boolean execute(CommandSender sender, Player player, String cmdName, String[] preArgs, String[] args) {
         if (player == null) {
-            sender.sendMessage(ChatColor.RED + "You don't have any points to list!");
+            sender.sendMessage(ChatColor.RED + "Consoles don't have any points to list!");
             return true;
         }
 
