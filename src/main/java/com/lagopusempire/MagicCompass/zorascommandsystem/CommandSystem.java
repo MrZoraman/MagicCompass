@@ -1,5 +1,6 @@
-package com.lagopusempire.zorascommandsystem;
+package com.lagopusempire.MagicCompass.zorascommandsystem;
 
+import com.lagopusempire.MagicCompass.zorascommandsystem.CommandPackage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
