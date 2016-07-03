@@ -18,6 +18,7 @@ public class HelpCommand implements CSBukkitCommand {
             sender.sendMessage(AQUA + "/point add [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Adds and saves a point to your list.");
             sender.sendMessage(AQUA + "/point remove [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Removes a point from your list.");
             sender.sendMessage(AQUA + "/point set [PointName] " + YELLOW + "-" + LIGHT_PURPLE + " Makes your compass point to a point.");
+            sender.sendMessage(AQUA + "/point reset " + YELLOW + "-" + LIGHT_PURPLE + " Resets your compass to point to spawn.");
         }
 
         if (Permissions.CAN_RELOAD.verify(sender)) {

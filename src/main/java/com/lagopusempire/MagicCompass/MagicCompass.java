@@ -6,6 +6,7 @@ import com.lagopusempire.MagicCompass.commands.HelpCommand;
 import com.lagopusempire.MagicCompass.commands.ListPointsCommand;
 import com.lagopusempire.MagicCompass.commands.ReloadCommand;
 import com.lagopusempire.MagicCompass.commands.RemovePointCommand;
+import com.lagopusempire.MagicCompass.commands.ResetCommand;
 import com.lagopusempire.MagicCompass.commands.SavePointCommand;
 import com.lagopusempire.MagicCompass.commands.SetPointCommand;
 import com.lagopusempire.MagicCompass.management.PointManager;
@@ -32,5 +33,6 @@ public class MagicCompass extends JavaPlugin {
         cs.registerCommand("point {to|set}", new SetPointCommand(pointManager));
         cs.registerCommand("point list", new ListPointsCommand(pointManager));
         cs.registerCommand("point reload", new ReloadCommand(pointConfig, getLogger()));
+        cs.registerCommand("point reset", new ResetCommand(pointManager));
     }
 }
