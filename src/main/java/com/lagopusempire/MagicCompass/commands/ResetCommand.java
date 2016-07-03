@@ -25,6 +25,7 @@ public class ResetCommand extends CommandBase {
         }
         
         player.setCompassTarget(player.getWorld().getSpawnLocation());
+        player.sendMessage(ChatColor.GREEN + "Your compass not points to your world's spawn location.");
         return true;
     }
     
