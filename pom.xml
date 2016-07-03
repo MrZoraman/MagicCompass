@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 	
     <name>${project.artifactId}</name>
-    <description>Gives players the ability to control where their compass points.</description>
+    <description>Gives players the ability to control where their compass points to.</description>
     <inceptionYear>2012</inceptionYear>
     <organization>
         <name>Lagopus Empire</name>
