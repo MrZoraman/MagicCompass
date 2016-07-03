@@ -10,6 +10,7 @@ import com.lagopusempire.MagicCompass.commands.ResetCommand;
 import com.lagopusempire.MagicCompass.commands.SavePointCommand;
 import com.lagopusempire.MagicCompass.commands.SetPointCommand;
 import com.lagopusempire.MagicCompass.listeners.PlayerBedEventListener;
+import com.lagopusempire.MagicCompass.listeners.PlayerDeathEventListener;
 import com.lagopusempire.MagicCompass.management.PointManager;
 import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
 import com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat.BukkitCommandSystem;
@@ -37,5 +38,6 @@ public class MagicCompass extends JavaPlugin {
         cs.registerCommand("point reset", new ResetCommand(pointManager));
         
         getServer().getPluginManager().registerEvents(new PlayerBedEventListener(pointManager), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(pointManager), this);
     }
 }
