@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.zorascommandsystem;
+package com.lagopusempire.zorascommandsystem;
 
 import java.util.ArrayList;
 import java.util.HashMap;

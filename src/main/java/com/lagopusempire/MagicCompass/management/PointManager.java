@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.management;
+package com.lagopusempire.MagicCompass.management;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,8 +13,8 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import com.mrz.dyndns.server.MagicCompass.evilmidget38.UUIDFetcher;
-import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
+import com.lagopusempire.MagicCompass.evilmidget38.UUIDFetcher;
+import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
 
 import static com.mrz.dyndns.server.MagicCompass.management.PointReadResultType.*;
 

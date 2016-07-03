@@ -19,7 +19,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 * SOFTWARE.
 */
-package com.mrz.dyndns.server.MagicCompass.utils;
+package com.lagopusempire.MagicCompass.utils;
 
 import java.io.File;
 import java.io.IOException;

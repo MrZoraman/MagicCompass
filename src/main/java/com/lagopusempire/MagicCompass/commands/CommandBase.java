@@ -1,7 +1,7 @@
-package com.mrz.dyndns.server.MagicCompass.commands;
+package com.lagopusempire.MagicCompass.commands;
 
-import com.mrz.dyndns.server.MagicCompass.management.PointManager;
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
+import com.lagopusempire.MagicCompass.management.PointManager;
+import com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
 
 public abstract class CommandBase implements CSBukkitCommand
 {

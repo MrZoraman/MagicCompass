@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.commands;
+package com.lagopusempire.MagicCompass.commands;
 
 import java.util.logging.Logger;
 
@@ -6,9 +6,9 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.mrz.dyndns.server.MagicCompass.Permissions;
-import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
+import com.lagopusempire.MagicCompass.Permissions;
+import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
+import com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
 
 public class ReloadCommand implements CSBukkitCommand
 {

@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat;
+package com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat;
 
 import java.util.Set;
 
@@ -9,8 +9,8 @@ import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.CommandPackage;
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.CommandSystem;
+import com.lagopusempire.MagicCompass.zorascommandsystem.CommandPackage;
+import com.lagopusempire.MagicCompass.zorascommandsystem.CommandSystem;
 
 public class BukkitCommandSystem extends CommandSystem<CSBukkitCommand> implements CommandExecutor
 {

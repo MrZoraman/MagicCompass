@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass;
+package com.lagopusempire.MagicCompass;
 
 import org.bukkit.command.CommandSender;
 

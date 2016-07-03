@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.evilmidget38;
+package com.lagopusempire.MagicCompass.evilmidget38;
 
 import com.google.common.collect.ImmutableList;
 import org.json.simple.JSONArray;

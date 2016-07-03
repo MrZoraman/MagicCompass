@@ -1,10 +1,10 @@
-package com.mrz.dyndns.server.MagicCompass.commands;
+package com.lagopusempire.MagicCompass.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.mrz.dyndns.server.MagicCompass.Permissions;
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
+import com.lagopusempire.MagicCompass.Permissions;
+import com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat.CSBukkitCommand;
 
 import static org.bukkit.ChatColor.*;
 

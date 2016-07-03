@@ -1,4 +1,4 @@
-package com.mrz.dyndns.server.MagicCompass.management;
+package com.lagopusempire.MagicCompass.management;
 
 import org.bukkit.Location;
 

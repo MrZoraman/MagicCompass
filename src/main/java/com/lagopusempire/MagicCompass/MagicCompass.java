@@ -1,16 +1,16 @@
-package com.mrz.dyndns.server.MagicCompass;
+package com.lagopusempire.MagicCompass;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.mrz.dyndns.server.MagicCompass.commands.HelpCommand;
-import com.mrz.dyndns.server.MagicCompass.commands.ListPointsCommand;
-import com.mrz.dyndns.server.MagicCompass.commands.ReloadCommand;
-import com.mrz.dyndns.server.MagicCompass.commands.RemovePointCommand;
-import com.mrz.dyndns.server.MagicCompass.commands.SavePointCommand;
-import com.mrz.dyndns.server.MagicCompass.commands.SetPointCommand;
-import com.mrz.dyndns.server.MagicCompass.management.PointManager;
-import com.mrz.dyndns.server.MagicCompass.utils.ConfigAccessor;
-import com.mrz.dyndns.server.MagicCompass.zorascommandsystem.bukkitcompat.BukkitCommandSystem;
+import com.lagopusempire.MagicCompass.commands.HelpCommand;
+import com.lagopusempire.MagicCompass.commands.ListPointsCommand;
+import com.lagopusempire.MagicCompass.commands.ReloadCommand;
+import com.lagopusempire.MagicCompass.commands.RemovePointCommand;
+import com.lagopusempire.MagicCompass.commands.SavePointCommand;
+import com.lagopusempire.MagicCompass.commands.SetPointCommand;
+import com.lagopusempire.MagicCompass.management.PointManager;
+import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
+import com.lagopusempire.MagicCompass.zorascommandsystem.bukkitcompat.BukkitCommandSystem;
 
 public class MagicCompass extends JavaPlugin
 {
