@@ -37,6 +37,9 @@ public class SavePointCommand extends CommandBase {
         if (pointName.equalsIgnoreCase("spawn")) {
             player.sendMessage(ChatColor.YELLOW + pointName + ChatColor.RED + " is the point that points your compass towards spawn, and thus it is reserved.");
             return true;
+        } else if (pointName.equalsIgnoreCase("bed") || pointName.equalsIgnoreCase("death")) {
+            player.sendMessage(ChatColor.YELLOW + pointName + ChatColor.RED + " is a reserved point, automatically set for you under specific circumstances.");
+            return true;
         }
 
         Location loc = player.getLocation();
