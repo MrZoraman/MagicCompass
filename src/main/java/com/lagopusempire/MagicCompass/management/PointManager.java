@@ -16,7 +16,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import com.lagopusempire.MagicCompass.evilmidget38.UUIDFetcher;
 import com.lagopusempire.MagicCompass.utils.ConfigAccessor;
 
-import static com.mrz.dyndns.server.MagicCompass.management.PointReadResultType.*;
+import static com.lagopusempire.MagicCompass.management.PointReadResultType.*;
 
 public class PointManager
 {
